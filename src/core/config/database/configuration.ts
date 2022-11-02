@@ -1,5 +1,7 @@
 import {registerAs} from '@nestjs/config';
 
+// These are configured database variables
+
 export default registerAs('database', () => ({
     type: 'mssql',
     host: process.env.DATABASE_HOST,
