@@ -1,21 +1,13 @@
 import { Module } from '@nestjs/common';
-import {TypeOrmModule} from '@nestjs/typeorm';
-import {Product} from './product/product.entity';
 import {ProductsModule} from './product/products.module';
+import {DatabaseConfigModule} from './core/config/database/config.module';
+import {DatabaseModule} from './core/database/database.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mssql',
-      host: 'localhost',
-      port: 6666,
-      username: 'sa',
-      password: 'Hussnain20',
-      database: 'shoply',
-      entities: [Product],
-      options: { encrypt: false },
-    }),
     ProductsModule,
+    DatabaseModule,
+    DatabaseConfigModule,
   ],
 })
 export class AppModule {}
