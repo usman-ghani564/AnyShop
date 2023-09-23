@@ -18,11 +18,10 @@ import { DatabaseConfigService } from '../config/database/config.service';
           encrypt: false,
           options: {
             trustServerCertificate: true,
-          }
+          },
         };
       },
       inject: [DatabaseConfigService],
-      
     }),
   ],
 })
